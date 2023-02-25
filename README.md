@@ -88,7 +88,7 @@ pub fn add(left: usize, right: usize) -> usize {
 
 ### WebAssembly
 
-使用 rust 编译后的产物 [app/index.ts](./app/index.ts)
+使用 rust 编译后的产物`wasm/pkg`, 在[app/index.ts](./app/index.ts)中引入。
 
 ```ts
 // https://developer.mozilla.org/zh-CN/docs/WebAssembly/Loading_and_running
