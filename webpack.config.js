@@ -12,13 +12,19 @@ module.exports = (env, argv) => {
       compress: isProd,
       port: 8000
     },
-    entry: "./app/index.js",
+    entry: "./app/index.ts",
     output: {
       path: distPath,
       filename: "index.js"
     },
     module: {
-      rules: []
+      rules: [
+        {
+          test: /\.(ts|js)?$/,
+          use: "ts-loader",
+          exclude: /node_modules/
+        }
+      ]
     },
     plugins: [
       new CopyWebpackPlugin({
