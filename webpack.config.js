@@ -1,4 +1,5 @@
 const path = require("path");
+const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = (env, argv) => {
@@ -33,11 +34,22 @@ module.exports = (env, argv) => {
     plugins: [
       new CopyWebpackPlugin({
         patterns: [{ from: "./public", to: distPath }]
+      }),
+      // We point our WasmPackPlugin to the location of the
+      // the crates `Cargo.toml` file. Never the root file.
+      new WasmPackPlugin({
+        crateDirectory: path.join(__dirname, "wasm"),
+        outDir: path.join(__dirname, "wasm/pkg")
+        // extraArgs: ""
       })
     ],
     resolve: {
       // A little overkill for our tutorial but useful.
       extensions: [".ts", ".tsx", ".js", ".jsx", ".mts", ".mjs"]
+    },
+    experiments: {
+      asyncWebAssembly: true,
+      syncWebAssembly: true
     }
   };
 };
