@@ -4,5 +4,5 @@ import "./index.scss";
 import("../wasm/pkg").then((module) => {
   console.log("app");
   const add = module.add;
-  console.log(add(1, 2));
+  console.log(add(1, 5));
 });
