@@ -1,22 +1,32 @@
 // 这个很重要
 use wasm_bindgen::prelude::*;
 
+// When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
+// allocator.
+#[cfg(feature = "wee_alloc")]
+#[global_allocator]
+static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
+
 // #[wasm_bindgen] 属性 是把当前函数暴露给js使用
+// +
 #[wasm_bindgen]
 pub fn addition(left: usize, right: usize) -> usize {
     left + right
 }
 
+// -
 #[wasm_bindgen]
 pub fn subtraction(left: usize, right: usize) -> usize {
     left - right
 }
 
+// /
 #[wasm_bindgen]
 pub fn division(left: usize, right: usize) -> usize {
     left / right
 }
 
+// *
 #[wasm_bindgen]
 pub fn multiplication(left: usize, right: usize) -> usize {
     left * right
