@@ -12,12 +12,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "node scripts/rm.js && webpack --mode production"
   },
   "devDependencies": {
     "@wasm-tool/wasm-pack-plugin": "^1.6.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
+    "rimraf": "^4.1.2",
     "sass": "^1.58.3",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
