@@ -23,7 +23,7 @@ impl ArithmeticOperation {
     /// # Examples
     ///
     /// ```
-    /// let x = ArithmeticOperation::addition(1, 2);
+    /// let x = ArithmeticOperation::addition(1, 2); // 1 + 2 = 3
     ///
     /// ```
     #[wasm_bindgen]
@@ -36,7 +36,7 @@ impl ArithmeticOperation {
     /// # Examples
     ///
     /// ```
-    /// let x = ArithmeticOperation::subtraction(10, 9);
+    /// let x = ArithmeticOperation::subtraction(10, 9); // 10 - 9 = 1
     ///
     /// ```
     #[wasm_bindgen]
@@ -49,7 +49,7 @@ impl ArithmeticOperation {
     /// # Examples
     ///
     /// ```
-    /// let x = ArithmeticOperation::division(10, 5);
+    /// let x = ArithmeticOperation::division(10, 5); // 10 / 5 = 2
     ///
     /// ```
     #[wasm_bindgen]
@@ -62,7 +62,7 @@ impl ArithmeticOperation {
     /// # Examples
     ///
     /// ```
-    /// let x = ArithmeticOperation::multiplication(2, 5);
+    /// let x = ArithmeticOperation::multiplication(2, 5); // 2 * 5 = 10
     ///
     /// ```
     #[wasm_bindgen]
