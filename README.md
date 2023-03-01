@@ -66,6 +66,14 @@ crate-type = ["cdylib", "rlib"]
 [dependencies]
 wasm-bindgen = "0.2"
 
+# `wee_alloc` is a tiny allocator for wasm that is only ~1K in code size
+# compared to the default allocator's ~10K. It is slower than the default
+# allocator, however.
+wee_alloc = { version = "0.4.5", optional = true }
+
+[features]
+default = ["wee_alloc"]
+
 [dev-dependencies]
 wasm-bindgen-test = "0.3"
 
@@ -78,6 +86,12 @@ wasm-opt = ["-Oz", "--enable-mutable-globals"]
 ```rust
 // 这个很重要， 预加载wasm_bindgen
 use wasm_bindgen::prelude::*;
+
+// When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
+// allocator.
+#[cfg(feature = "wee_alloc")]
+#[global_allocator]
+static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 // #[wasm_bindgen]属性 是把当前函数暴露给js使用
 #[wasm_bindgen]
