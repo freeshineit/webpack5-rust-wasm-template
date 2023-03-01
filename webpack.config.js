@@ -16,7 +16,8 @@ module.exports = (env, argv) => {
     entry: "./app/index.ts",
     output: {
       path: distPath,
-      filename: "index.js"
+      filename: "index.js",
+      webassemblyModuleFilename: "index.wasm"
     },
     module: {
       rules: [
