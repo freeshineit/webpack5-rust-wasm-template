@@ -1,3 +1,5 @@
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
 [package]
 name = "wasm"
 version = "0.1.0"
@@ -7,7 +9,6 @@ license = "MIT"
 description="wasm function"
 repository = "https://github.com/freeshineit/webpack5-rust-wasm-template"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
 crate-type = ["cdylib", "rlib"]
