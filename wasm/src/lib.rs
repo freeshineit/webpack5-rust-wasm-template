@@ -10,7 +10,7 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 // #[wasm_bindgen] 属性 是把当前函数暴露给js使用
 
 #[wasm_bindgen]
-struct ArithmeticOperation {}
+pub struct ArithmeticOperation {}
 
 ///
 /// Arithmetic Operation (+,-,*,/)
