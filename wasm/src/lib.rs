@@ -8,25 +8,54 @@ use wasm_bindgen::prelude::*;
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 // #[wasm_bindgen] 属性 是把当前函数暴露给js使用
-// +
+
+/// Addition.
+///
+/// # Examples
+///
+/// ```
+/// let x = addition(1, 2);
+///
+/// ```
 #[wasm_bindgen]
 pub fn addition(left: usize, right: usize) -> usize {
     left + right
 }
 
-// -
+/// Subtraction.
+///
+/// # Examples
+///
+/// ```
+/// let x = subtraction(10, 9);
+///
+/// ```
 #[wasm_bindgen]
 pub fn subtraction(left: usize, right: usize) -> usize {
     left - right
 }
 
-// /
+/// Division.
+///
+/// # Examples
+///
+/// ```
+/// let x = division(10, 5);
+///
+/// ```
 #[wasm_bindgen]
 pub fn division(left: usize, right: usize) -> usize {
     left / right
 }
 
-// *
+/// Multiplication.
+///
+/// # Examples
+///
+/// ```
+/// let x = multiplication(2, 5);
+///
+/// ```
 #[wasm_bindgen]
 pub fn multiplication(left: usize, right: usize) -> usize {
     left * right
