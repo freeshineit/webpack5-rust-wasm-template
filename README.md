@@ -9,6 +9,7 @@
 yarn install
 
 # development
+# 如果运行时 rust没有编译 ， 请移除node_modules重新安装
 yarn run dev
 
 # production

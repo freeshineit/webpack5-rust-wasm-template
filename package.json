@@ -12,21 +12,23 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack server --mode development --open",
-    "build": "node scripts/rm.js && webpack --mode production"
+    "build": "node scripts/rm.js && webpack --mode production",
+    "preinstall": "npx only-allow yarn"
   },
   "devDependencies": {
     "@wasm-tool/wasm-pack-plugin": "^1.6.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
-    "rimraf": "^4.1.2",
-    "sass": "^1.58.3",
+    "only-allow": "^1.1.1",
+    "rimraf": "^4.4.0",
+    "sass": "^1.59.3",
     "sass-loader": "^13.2.0",
-    "style-loader": "^3.3.1",
+    "style-loader": "^3.3.2",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.5",
     "wasm-pack": "^0.10.3",
-    "webpack": "^5.75.0",
+    "webpack": "^5.76.2",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-server": "^4.13.0"
   }
 }
