@@ -16,6 +16,7 @@
     "preinstall": "npx only-allow yarn"
   },
   "devDependencies": {
+    "@swc/core": "^1.3.41",
     "@wasm-tool/wasm-pack-plugin": "^1.6.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
@@ -24,7 +25,7 @@
     "sass": "^1.59.3",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.2",
-    "ts-loader": "^9.4.2",
+    "swc-loader": "^0.2.3",
     "typescript": "^4.9.5",
     "wasm-pack": "^0.10.3",
     "webpack": "^5.76.2",

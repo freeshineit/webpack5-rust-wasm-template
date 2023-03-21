@@ -31,7 +31,7 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.(ts|js)?$/,
-          use: "ts-loader",
+          use: "swc-loader",
           exclude: /node_modules/
         }
       ]
