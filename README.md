@@ -32,7 +32,7 @@ yarn add webpack webpack-cli webpack-dev-server copy-webpack-plugin -D
 ### typescript
 
 ```bash
-yarn add ts-loader typescript -D
+yarn add @swc/core swc-loader typescript -D
 ```
 
 ### sass
