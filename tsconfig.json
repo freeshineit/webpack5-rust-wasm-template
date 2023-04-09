@@ -11,6 +11,7 @@
         "noUnusedParameters": false,
         "target": "es5",
         "allowJs": true,
+        "strictNullChecks": true,
         "typeRoots": [
             "node_modules/@types",
             "@typings",
