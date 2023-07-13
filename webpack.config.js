@@ -44,7 +44,7 @@ module.exports = (env, argv) => {
       // the crates `Cargo.toml` file. Never the root file.
       new WasmPackPlugin({
         crateDirectory: path.join(__dirname, 'wasm'),
-        outDir: path.join(__dirname, 'wasm/pkg'),
+        outDir: path.join(__dirname, isProd ? distPath : 'wasm/pkg'),
         // extraArgs: ""
       }),
     ],
