@@ -1,7 +1,7 @@
 {
   "name": "webpack5-rust-wasm-template",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "keywords": [
     "wasm",
     "webpack5",
@@ -12,7 +12,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack server --mode development --open",
-    "build": "node scripts/rm.js && webpack --mode production",
+    "build": "rimraf dist && webpack --mode production",
     "preinstall": "npx only-allow yarn",
     "lint": "npx eslint .",
     "fmt": "prettier --write \"**/*.{js,cjs,ts,tsx,scss,css}\""
@@ -36,5 +36,8 @@
     "webpack": "^5.76.2",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

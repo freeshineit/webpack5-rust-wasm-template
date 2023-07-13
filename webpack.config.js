@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
-  const distPath = path.resolve(__dirname, isProd ? 'docs' : 'dist');
+  const distPath = path.resolve(__dirname, './dist');
   return {
     devServer: {
       static: {
@@ -44,7 +44,7 @@ module.exports = (env, argv) => {
       // the crates `Cargo.toml` file. Never the root file.
       new WasmPackPlugin({
         crateDirectory: path.join(__dirname, 'wasm'),
-        outDir: path.join(__dirname, isProd ? distPath : 'wasm/pkg'),
+        outDir: path.join(__dirname, 'wasm/pkg'),
         // extraArgs: ""
       }),
     ],
