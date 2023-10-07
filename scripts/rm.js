@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const rm = require('rimraf');
 const path = require('path');
 
