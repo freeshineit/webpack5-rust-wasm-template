@@ -18,24 +18,24 @@
     "fmt": "prettier --write \"**/*.{js,cjs,ts,tsx,scss,css}\""
   },
   "devDependencies": {
-    "@swc/core": "^1.3.41",
-    "@swc/helpers": "^0.5.0",
+    "@swc/core": "^1.3.92",
+    "@swc/helpers": "^0.5.3",
     "@wasm-tool/wasm-pack-plugin": "^1.7.0",
     "copy-webpack-plugin": "^11.0.0",
-    "css-loader": "^6.7.3",
-    "eslint": "^8.38.0",
-    "eslint-config-xx": "^1.1.3",
-    "only-allow": "^1.1.1",
-    "rimraf": "^4.4.0",
-    "sass": "^1.59.3",
-    "sass-loader": "^13.2.0",
-    "style-loader": "^3.3.2",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.50.0",
+    "eslint-config-xx": "^1.2.0",
+    "only-allow": "^1.2.1",
+    "rimraf": "^4.4.1",
+    "sass": "^1.69.0",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
     "swc-loader": "^0.2.3",
-    "typescript": "^4.9.5",
+    "typescript": "^5.2.2",
     "wasm-pack": "^0.12.1",
-    "webpack": "^5.76.2",
-    "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.13.0"
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "files": [
     "dist"
