@@ -1,5 +1,5 @@
 // wasm 是 `Cargo.toml`下 `package`的name
-use wasm::ArithmeticOperation;
+use rust::ArithmeticOperation;
 
 #[test]
 fn test_addition() {
