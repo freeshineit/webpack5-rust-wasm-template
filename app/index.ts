@@ -1,7 +1,7 @@
 import './index.scss';
 
 // https://developer.mozilla.org/zh-CN/docs/WebAssembly/Loading_and_running
-import('../wasm/pkg').then((module) => {
+import('../rust/pkg').then((module) => {
   console.log('app');
 
   // +

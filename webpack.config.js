@@ -43,8 +43,8 @@ module.exports = (env, argv) => {
       // We point our WasmPackPlugin to the location of the
       // the crates `Cargo.toml` file. Never the root file.
       new WasmPackPlugin({
-        crateDirectory: path.join(__dirname, 'wasm'),
-        outDir: path.join(__dirname, 'wasm/pkg'),
+        crateDirectory: path.join(__dirname, 'rust'),
+        outDir: path.join(__dirname, 'rust/pkg'),
         // extraArgs: ""
       }),
     ],

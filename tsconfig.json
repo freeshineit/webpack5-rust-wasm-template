@@ -15,9 +15,9 @@
         "typeRoots": [
             "node_modules/@types",
             "@typings",
-            "wasm/pkg"
+            "rust/pkg"
         ],
         "lib": ["DOM", "ESNext"]
     },
-    "exclude": ["node_modules", "wasm/pkg", "wasm/target"]
+    "exclude": ["node_modules", "rust/pkg", "rust/target"]
  }

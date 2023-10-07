@@ -1,6 +1,6 @@
-wasm/target
+rust/target
 node_modules
-wasm/pkg
+rust/pkg
 
 /dist
 /docs

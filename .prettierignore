@@ -6,5 +6,5 @@ dist/
 coverage/
 resources/
 build/
-wasm/
+rust/
 docs/
