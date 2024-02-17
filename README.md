@@ -20,8 +20,7 @@ yarn run build
 cd docs && http-server -p 8080 .
 ```
 
-
-## 创建
+## Start
 
 ### webpack
 
@@ -107,13 +106,13 @@ pub fn add(left: usize, right: usize) -> usize {
 
 ```ts
 // https://developer.mozilla.org/zh-CN/docs/WebAssembly/Loading_and_running
-import("../wasm/pkg").then((module) => {
+import('../wasm/pkg').then((module) => {
   // module.add 就是 .wasm 暴露出来的函数
   const add = module.add;
   console.log(add(1, 2));
 });
 ```
- 
+
 ## Github action
 
 [.github](./.github/workflows/cl.yml)
