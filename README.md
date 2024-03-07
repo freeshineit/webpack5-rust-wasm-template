@@ -10,14 +10,15 @@ yarn install
 
 # development
 # 如果运行时 rust没有编译 ， 请移除node_modules重新安装
+# 支持热更新
 yarn run dev
 
 # production
 yarn run build
 
 # https://github.com/http-party/http-server
-# version >= 14
-cd docs && http-server -p 8080 .
+# version >= 18
+cd dist && http-server -p 8080 .
 ```
 
 ## Start
@@ -41,14 +42,19 @@ yarn add sass css-loader style-loader sass-loader -D
 
 ```
 
+[webpack config](./webpack.config.js)
+
 ### wasm-pack
 
-rust 编译成 `webassembly` 需要 [wasm-pack](https://rustwasm.github.io/wasm-pack/)
+rust 编译成 `WebAssembly` 需要 [wasm-pack](https://rustwasm.github.io/wasm-pack/)
 
 ```bash
 # 不建议全局安装
 # 如果wasm-pack 有问题， 请删除 `node_modules`重新安装依赖
 yarn add wasm-pack -D
+
+# wasm-pack build --target nodejs
+# wasm-pack build --target browser
 
 # webpack plugin
 yarn add @wasm-tool/wasm-pack-plugin -D
