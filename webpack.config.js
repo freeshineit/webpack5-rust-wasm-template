@@ -20,6 +20,7 @@ module.exports = (env, argv) => {
       filename: 'index.js',
       webassemblyModuleFilename: 'index.wasm',
     },
+    devtool: isProd ? false : 'cheap-module-source-map',
     module: {
       rules: [
         {
