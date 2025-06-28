@@ -6,6 +6,7 @@
 
 ```bash
 # install dependency
+# force yarn
 yarn install
 
 # development
@@ -47,6 +48,8 @@ yarn add sass css-loader style-loader sass-loader -D
 ### wasm-pack
 
 rust 编译成 `WebAssembly` 需要 [wasm-pack](https://rustwasm.github.io/wasm-pack/)
+
+WANRING: 如果 MacOS M 系列芯片不能安装成功， 请使用 `cargo install wasm-pack` , 请参考 https://github.com/rustwasm/wasm-pack/issues/952#issuecomment-875585274
 
 ```bash
 # 不建议全局安装
