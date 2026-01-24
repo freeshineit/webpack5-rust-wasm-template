@@ -7,4 +7,6 @@ coverage/
 resources/
 build/
 rust/
+rust/pkg
 docs/
+webpack.config.js

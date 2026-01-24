@@ -15,8 +15,8 @@
     "build": "rimraf dist && webpack --mode production",
     "prepare": "husky",
     "preinstall": "npx only-allow yarn",
-    "lint": "npx eslint .",
-    "fmt": "prettier --write \"**/*.{js,cjs,ts,tsx,scss,css}\""
+    "lint": "npx eslint \"app/*.{js,cjs,ts,tsx,.mjs,scss,css}\"",
+    "fmt": "prettier --write \"**/*.{js,cjs,ts,tsx,.mjs,scss,css}\""
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
@@ -27,9 +27,10 @@
     "@wasm-tool/wasm-pack-plugin": "^1.7.0",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.0.0",
-    "eslint": "^8.57.0",
-    "eslint-config-xx": "^1.10.0",
+    "eslint": "^9.39.2",
+    "eslint-config-xx": "^2.0.1",
     "husky": "^9.0.11",
+    "install": "^0.13.0",
     "only-allow": "^1.2.1",
     "prettier": "^3.2.5",
     "pretty-quick": "^4.0.0",
