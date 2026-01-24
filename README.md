@@ -116,9 +116,9 @@ pub fn add(left: usize, right: usize) -> usize {
 ```ts
 // https://developer.mozilla.org/zh-CN/docs/WebAssembly/Loading_and_running
 import('../rust/pkg').then(module => {
-  // module.add 就是 .wasm 暴露出来的函数
-  const add = module.add;
-  console.log(add(1, 2));
+  // module.addition 就是 .wasm 暴露出来的函数
+  const addition = module.addition;
+  console.log(addition(1, 2));
 });
 ```
 
