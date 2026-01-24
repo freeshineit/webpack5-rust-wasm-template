@@ -56,17 +56,17 @@ WANRING: 如果 MacOS M 系列芯片不能安装成功， 请使用 `cargo insta
 # 如果wasm-pack 有问题， 请删除 `node_modules`重新安装依赖
 yarn add wasm-pack -D
 
-# wasm-pack build --target nodejs
-# wasm-pack build --target browser
-
 # webpack plugin
 yarn add @wasm-tool/wasm-pack-plugin -D
 
 # 创建 rust 项目
-cargo new wasm --lib
+cargo new rust --lib
+
+# wasm-pack build --target nodejs
+# wasm-pack build --target web
 ```
 
-在[wasm](./wasm)中的[Cargo.toml](./wasm/Cargo.toml)中添加下面依赖
+在[rust](./rust)中的[Cargo.toml](./rust/Cargo.toml)中添加下面依赖
 
 ```toml
 [lib]
@@ -90,7 +90,7 @@ wasm-bindgen-test = "0.3"
 wasm-opt = ["-Oz", "--enable-mutable-globals"]
 ```
 
-更新[wasm/src/lib.rs](./wasm/src/lib.rs)
+更新[rust/src/lib.rs](./rust/src/lib.rs)
 
 ```rust
 // 这个很重要， 预加载wasm_bindgen
@@ -111,11 +111,11 @@ pub fn add(left: usize, right: usize) -> usize {
 
 ### WebAssembly
 
-使用 rust 编译后的产物`wasm/pkg`, 在[app/index.ts](./app/index.ts)中引入。
+使用 rust 编译后的产物`rust/pkg`, 在[app/index.ts](./app/index.ts)中引入。
 
 ```ts
 // https://developer.mozilla.org/zh-CN/docs/WebAssembly/Loading_and_running
-import('../wasm/pkg').then((module) => {
+import('../rust/pkg').then(module => {
   // module.add 就是 .wasm 暴露出来的函数
   const add = module.add;
   console.log(add(1, 2));

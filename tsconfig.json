@@ -1,23 +1,47 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist/",
-        "noImplicitAny": true,
-        "sourceMap": true,
-        "module": "ESNext",
-        "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true,
-        "experimentalDecorators": true,
-        "noUnusedLocals": false,
-        "noUnusedParameters": false,
-        "target": "es5",
-        "allowJs": true,
-        "strictNullChecks": true,
-        "typeRoots": [
-            "node_modules/@types",
-            "@typings",
-            "rust/pkg"
-        ],
-        "lib": ["DOM", "ESNext"]
-    },
-    "exclude": ["node_modules", "rust/pkg", "rust/target"]
- }
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ES2020",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+
+    /* Strict Type Checking */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+
+    /* Module Resolution */
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowJs": true,
+
+    /* Advanced */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+
+    "typeRoots": ["node_modules/@types", "@typings", "rust/pkg"],
+    "rootDir": "./",
+    "paths": {
+      "@rust": ["./rust/pkg"]
+    }
+  },
+  "include": ["app/**/*"],
+  "exclude": ["node_modules", "rust/pkg", "rust/target", "dist"]
+}

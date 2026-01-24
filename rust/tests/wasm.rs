@@ -1,26 +1,46 @@
-// wasm 是 `Cargo.toml`下 `package`的name
+//! Test suite for the Web and headless browsers.
+
+#![cfg(target_arch = "wasm32")]
+
+extern crate wasm_bindgen_test;
+use wasm_bindgen_test::*;
+
+wasm_bindgen_test_configure!(run_in_browser);
+
 use rust::ArithmeticOperation;
 
-#[test]
+#[wasm_bindgen_test]
 fn test_addition() {
-    let result = ArithmeticOperation::addition(2, 2);
-    assert_eq!(result, 4);
+    let result = ArithmeticOperation::addition_internal(2, 2);
+    assert_eq!(result, Ok(4));
 }
 
-#[test]
+#[wasm_bindgen_test]
 fn test_subtraction() {
-    let result = ArithmeticOperation::subtraction(10, 8);
-    assert_eq!(result, 2);
+    let result = ArithmeticOperation::subtraction_internal(10, 8);
+    assert_eq!(result, Ok(2));
 }
 
-#[test]
+#[wasm_bindgen_test]
 fn test_division() {
-    let result = ArithmeticOperation::division(10, 2);
-    assert_eq!(result, 5);
+    let result = ArithmeticOperation::division_internal(10, 2);
+    assert_eq!(result, Ok(5));
 }
 
-#[test]
+#[wasm_bindgen_test]
 fn test_multiplication() {
-    let result = ArithmeticOperation::multiplication(2, 5);
-    assert_eq!(result, 10);
+    let result = ArithmeticOperation::multiplication_internal(2, 5);
+    assert_eq!(result, Ok(10));
+}
+
+#[wasm_bindgen_test]
+fn test_modulo() {
+    let result = ArithmeticOperation::modulo_internal(10, 3);
+    assert_eq!(result, Ok(1));
+}
+
+#[wasm_bindgen_test]
+fn test_power() {
+    let result = ArithmeticOperation::power_internal(2, 3);
+    assert_eq!(result, Ok(8));
 }
