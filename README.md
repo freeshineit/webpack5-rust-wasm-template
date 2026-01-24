@@ -349,106 +349,19 @@ webpack5-rust-wasm-template/
 
 ## 🔧 详细配置指南
 
-### webpack
+### 1. Webpack 依赖
 
 ```bash
 yarn add webpack webpack-cli webpack-dev-server copy-webpack-plugin -D
 ```
 
-### typescript
+### 2. TypeScript + swc 依赖
 
 ```bash
 yarn add @swc/core swc-loader typescript -D
 ```
 
-### sass
-
-```bash
-yarn add sass css-loader style-loader sass-loader -D
-
-```
-
-[webpack config](./webpack.config.js)
-
-### wasm-pack
-
-rust 编译成 `WebAssembly` 需要 [wasm-pack](https://rustwasm.github.io/wasm-pack/)
-
-WANRING: 如果 MacOS M 系列芯片不能安装成功， 请使用 `cargo install wasm-pack` , 请参考 https://github.com/rustwasm/wasm-pack/issues/952#issuecomment-875585274
-
-```bash
-# 不建议全局安装
-# 如果wasm-pack 有问题， 请删除 `node_modules`重新安装依赖
-yarn add wasm-pack -D
-
-# webpack plugin
-yarn add @wasm-tool/wasm-pack-plugin -D
-
-# 创建 rust 项目
-cargo new rust --lib
-
-# wasm-pack build --target nodejs
-# wasm-pack build --target web
-```
-
-在[rust](./rust)中的[Cargo.toml](./rust/Cargo.toml)中添加下面依赖
-
-```toml
-[lib]
-crate-type = ["cdylib", "rlib"]
-
-[dependencies]
-wasm-bindgen = "0.2"
-
-# `wee_alloc` is a tiny allocator for wasm that is only ~1K in code size
-# compared to the default allocator's ~10K. It is slower than the default
-# allocator, however.
-wee_alloc = { version = "0.4.5", optional = true }
-
-[features]
-default = ["wee_alloc"]
-
-[dev-dependencies]
-wasm-bindgen-test = "0.3"
-
-[package.metadata.wasm-pack.profile.release]
-wasm-opt = ["-Oz", "--enable-mutable-globals"]
-```
-
-更新[rust/src/lib.rs](./rust/src/lib.rs)
-
-```rust
-// 这个很重要， 预加载wasm_bindgen
-use wasm_bindgen::prelude::*;
-
-// When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
-// allocator.
-#[cfg(feature = "wee_alloc")]
-#[global_allocator]
-static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
-
-// #[wasm_bindgen]属性 是把当前函数暴露给js使用
-#[wasm_bindgen]
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
-```
-
-## 🔧 详细配置指南
-
-### 1. Webpack 配置
-
-```bash
-yarn add webpack webpack-cli webpack-dev-server copy-webpack-plugin -D
-```
-
-### 2. TypeScript 配置
-
-```bash
-yarn add @swc/core swc-loader typescript -D
-```
-
-### 3. SCSS 配置
+### 3. SCSS 依赖
 
 ```bash
 yarn add sass css-loader style-loader sass-loader -D
