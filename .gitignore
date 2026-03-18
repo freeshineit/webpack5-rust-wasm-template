@@ -5,5 +5,7 @@ rust/pkg
 /dist
 /docs
 
+._*
+
 .DS_Store
 .vscode
